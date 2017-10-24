@@ -1,15 +1,16 @@
 #include <stdio.h>
+struct Student {
+	char name[15];
+	int x,y;
+};
 int main() {
-	char numble[1000][15];
-	int site[1000][2];
+	struct Student students[1000];
 	int max;
 
 	scanf("%d", &max);
 	getchar();
 	for(int i=0; i<max; i++) {
-		scanf("%14c", numble[i]);
-		scanf("%d%d", &site[i][0], &site[i][1]);
-		getchar();
+		scanf("%s%d%d", students[i].name, &students[i].x, &students[i].y);
 	}
 		
 	
@@ -20,8 +21,8 @@ int main() {
 
 	for(int i=0; i<search_sum; i++) {
 		for (int j=0; j<max; j++) {
-			if (search[i] == site[j][0]) {
-				printf("%s %d\n", numble[j], site[j][1]);
+			if (students[j].x == search[i]) {
+				printf("%s %d\n", students[j].name, students[j].y);
 				break;
 			}
 		}
