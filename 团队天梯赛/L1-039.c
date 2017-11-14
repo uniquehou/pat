@@ -3,11 +3,11 @@
 #include <string.h>
 int main() {
 	int n;
-	char str[1000];
+	char str[1100];
 	scanf("%d", &n); getchar();
 	gets(str);
 	int len = strlen(str);
-	if (len%4)
+	if (len%n)
 		for(int i=0; i<n-len%n; i++) strcat(str, " ");
 	len = strlen(str);
 	for(int j=0; j<n; j++) {
